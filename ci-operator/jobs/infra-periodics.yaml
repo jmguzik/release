@@ -987,7 +987,7 @@ periodics:
         secretName: github-credentials-openshift-bot
 - agent: kubernetes
   cluster: app.ci
-  cron: '@hourly'
+  cron: 0 */4 * * *
   decorate: true
   extra_refs:
   - base_ref: master
