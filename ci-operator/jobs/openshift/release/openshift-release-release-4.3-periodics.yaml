@@ -159,8 +159,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 29 11 */14 * *
   decorate: true
-  interval: 8h
   labels:
     job-release: "4.3"
   name: promote-release-openshift-machine-os-content-e2e-aws-4.3-s390x
@@ -242,8 +242,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 20 16 */14 * *
   decorate: true
-  interval: 8h
   labels:
     job-release: "4.3"
   name: promote-release-openshift-machine-os-content-e2e-aws-4.3-ppc64le
@@ -325,6 +325,7 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 15 13 */14 * *
   decorate: true
   decoration_config:
     skip_cloning: true
@@ -333,7 +334,6 @@ periodics:
     org: openshift
     repo: origin
     workdir: true
-  interval: 2h
   labels:
     job-release: "4.3"
   name: promote-release-openshift-okd-machine-os-content-e2e-aws-4.3
@@ -613,8 +613,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 42 19 */14 * *
   decorate: true
-  interval: 16h
   labels:
     job-release: "4.3"
     pj-rehearse.openshift.io/can-be-rehearsed: "true"
@@ -713,8 +713,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 17 1 */14 * *
   decorate: true
-  interval: 24h
   labels:
     job-release: "4.3"
     pj-rehearse.openshift.io/can-be-rehearsed: "true"
@@ -815,8 +815,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 12 10 */14 * *
   decorate: true
-  interval: 24h
   labels:
     job-env: aws
     job-release: "4.3"
@@ -928,8 +928,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 46 21 */14 * *
   decorate: true
-  interval: 24h
   labels:
     job-env: aws
     job-release: "4.3"
@@ -1041,8 +1041,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 5 7 */14 * *
   decorate: true
-  interval: 24h
   labels:
     job-release: "4.3"
     pj-rehearse.openshift.io/can-be-rehearsed: "true"
@@ -1154,8 +1154,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 34 8 */14 * *
   decorate: true
-  interval: 24h
   labels:
     job-release: "4.3"
     pj-rehearse.openshift.io/can-be-rehearsed: "true"
@@ -1265,8 +1265,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 1 21 */14 * *
   decorate: true
-  interval: 24h
   labels:
     job-release: "4.3"
     pj-rehearse.openshift.io/can-be-rehearsed: "true"
@@ -1365,8 +1365,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 47 8 */14 * *
   decorate: true
-  interval: 24h
   labels:
     job-release: "4.3"
     pj-rehearse.openshift.io/can-be-rehearsed: "true"
@@ -1463,8 +1463,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 14 17 */14 * *
   decorate: true
-  interval: 24h
   labels:
     job-env: aws
     job-release: "4.3"
@@ -1563,8 +1563,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 57 10 */14 * *
   decorate: true
-  interval: 24h
   labels:
     job-env: gcp
     job-release: "4.3"
@@ -1675,8 +1675,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 6 12 */14 * *
   decorate: true
-  interval: 24h
   labels:
     job-release: "4.3"
     pj-rehearse.openshift.io/can-be-rehearsed: "true"
@@ -1775,8 +1775,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 36 13 */14 * *
   decorate: true
-  interval: 72h
   labels:
     job-env: aws
     job-release: "4.3"
@@ -1873,8 +1873,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 38 16 */14 * *
   decorate: true
-  interval: 24h
   labels:
     job-env: aws
     job-release: "4.3"
@@ -2001,8 +2001,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 50 10 */14 * *
   decorate: true
-  interval: 72h
   labels:
     job-env: aws
     job-release: "4.3"
@@ -2099,8 +2099,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 40 11 */14 * *
   decorate: true
-  interval: 72h
   labels:
     job-env: aws
     job-release: "4.3"
@@ -2184,8 +2184,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 55 8 */14 * *
   decorate: true
-  interval: 72h
   labels:
     job-env: aws
     job-release: "4.3"
@@ -2269,8 +2269,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 40 1 */14 * *
   decorate: true
-  interval: 24h
   labels:
     job-env: aws
     job-release: "4.3"
@@ -2369,8 +2369,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 57 17 */14 * *
   decorate: true
-  interval: 72h
   labels:
     job-env: gcp
     job-release: "4.3"
@@ -2456,8 +2456,8 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 46 22 */14 * *
   decorate: true
-  interval: 72h
   labels:
     job-env: azure
     job-release: "4.3"
@@ -2541,13 +2541,13 @@ periodics:
         secretName: ci-pull-credentials
 - agent: kubernetes
   cluster: build02
+  cron: 51 15 */14 * *
   decorate: true
   extra_refs:
   - base_ref: release-4.3
     org: openshift
     repo: openshift-ansible
     workdir: true
-  interval: 16h
   labels:
     job-release: "4.3"
     pj-rehearse.openshift.io/can-be-rehearsed: "true"
