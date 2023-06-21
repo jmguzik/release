@@ -26,7 +26,7 @@ base_images:
   coreos-centos-stream8:
     name: stream8
     namespace: coreos
-    tag: "8"
+    tag: '8'
   dev-scripts:
     name: test
     namespace: ocp-kni
@@ -60,7 +60,7 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.12"
+      version: '4.12'
 resources:
   '*':
     requests:
@@ -71,7 +71,6 @@ test_binary_build_commands: |
   go mod vendor
 tests:
 - as: mirror-nightly-image
-  cron: '@daily'
   steps:
     dependencies:
       SOURCE_IMAGE_REF: assisted-image-service
@@ -79,6 +78,7 @@ tests:
       RELEASE_TAG_PREFIX: ocm-2.7
     test:
     - ref: assisted-baremetal-images-publish
+  cron: 15 1 */6,18 * *
 - as: mirror-vcsref-image
   postsubmit: true
   steps:
@@ -127,7 +127,7 @@ tests:
       INDEX_IMAGE: assisted-service-index
       OPENSHIFT_INSTALL_RELEASE_IMAGE: release:latest
     env:
-      ALLOW_CONVERGED_FLOW: "False"
+      ALLOW_CONVERGED_FLOW: 'False'
     workflow: assisted-baremetal-operator-ztp
 zz_generated_metadata:
   branch: release-ocm-2.7

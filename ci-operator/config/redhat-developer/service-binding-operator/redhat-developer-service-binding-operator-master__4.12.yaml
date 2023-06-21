@@ -12,12 +12,12 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.12"
+      version: '4.12'
   latest:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.12"
+      version: '4.12'
 resources:
   '*':
     requests:
@@ -25,7 +25,8 @@ resources:
       memory: 250Mi
 tests:
 - as: acceptance
-  run_if_changed: ^.github/workflows/pr-checks-build-images.yaml$|^apis|^build|^config|^controllers|^hack/get-test-namespace|^hack/remove-sbr-finalizers.sh$|^hack/test-cleanup.sh$|^controllers|^make/acceptance.mk$|^make/build.mk$|^make/common.mk$|^make/release.mk$|^make/version.mk$|^pkg|^test/acceptance|^tools|^vendor|^Dockerfile$|^go.mod$|^go.sum$|^install.sh$|^main.go$
+  run_if_changed: 
+    ^.github/workflows/pr-checks-build-images.yaml$|^apis|^build|^config|^controllers|^hack/get-test-namespace|^hack/remove-sbr-finalizers.sh$|^hack/test-cleanup.sh$|^controllers|^make/acceptance.mk$|^make/build.mk$|^make/common.mk$|^make/release.mk$|^make/version.mk$|^pkg|^test/acceptance|^tools|^vendor|^Dockerfile$|^go.mod$|^go.sum$|^install.sh$|^main.go$
   steps:
     cluster_profile: aws
     test:
@@ -65,7 +66,6 @@ tests:
           cpu: 100m
     workflow: ipi-aws
 - as: validate-master-build
-  cron: 0 0 * * *
   steps:
     cluster_profile: aws
     test:
@@ -78,6 +78,7 @@ tests:
         requests:
           cpu: 100m
     workflow: ipi-aws
+  cron: 3 9 */4,14 * *
 - as: performance-reduced
   steps:
     cluster_profile: aws
@@ -202,4 +203,4 @@ zz_generated_metadata:
   branch: master
   org: redhat-developer
   repo: service-binding-operator
-  variant: "4.12"
+  variant: '4.12'

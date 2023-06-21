@@ -1,12 +1,12 @@
 base_images:
   cli:
-    name: "4.12"
+    name: '4.12'
     namespace: ocp
     tag: cli
   ubi_minimal:
     name: ubi-minimal
     namespace: ocp
-    tag: "8"
+    tag: '8'
 binary_build_commands: make dev-env
 build_root:
   project_image:
@@ -21,7 +21,7 @@ releases:
   latest:
     release:
       channel: fast
-      version: "4.12"
+      version: '4.12'
 resources:
   '*':
     limits:
@@ -34,7 +34,7 @@ tests:
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "false"
+      FIPS_ENABLED: 'false'
     test:
     - as: e2e
       commands: |
@@ -62,11 +62,10 @@ tests:
           memory: 1Gi
     workflow: openshift-e2e-aws
 - as: e2e-openshift-test-scenario-1-periodic
-  cron: 0 3 * * *
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "false"
+      FIPS_ENABLED: 'false'
     test:
     - as: e2e
       commands: |
@@ -93,12 +92,12 @@ tests:
           cpu: 500m
           memory: 1Gi
     workflow: openshift-e2e-aws
+  cron: 9 14 */4,18 * *
 - as: e2e-openshift-test-scenario-2-periodic
-  cron: 0 4 * * *
   steps:
     cluster_profile: aws
     env:
-      FIPS_ENABLED: "false"
+      FIPS_ENABLED: 'false'
     test:
     - as: e2e
       commands: |
@@ -125,8 +124,9 @@ tests:
           cpu: 500m
           memory: 1Gi
     workflow: openshift-e2e-aws
+  cron: 33 2 */8,18 * *
 zz_generated_metadata:
   branch: master
   org: dora-metrics
   repo: pelorus
-  variant: "4.12"
+  variant: '4.12'

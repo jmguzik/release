@@ -1,6 +1,6 @@
 base_images:
   cli:
-    name: "4.12"
+    name: '4.12'
     namespace: ocp
     tag: cli
 build_root:
@@ -25,17 +25,16 @@ releases:
   latest:
     release:
       channel: stable
-      version: "4.12"
+      version: '4.12'
 resources:
   '*':
     limits:
       memory: 2Gi
     requests:
-      cpu: "2"
+      cpu: '2'
       memory: 200Mi
 tests:
 - as: nightly-images-3-0
-  cron: 00 03 * * *
   steps:
     cluster_profile: aws-2
     env:
@@ -100,6 +99,7 @@ tests:
           memory: 100Mi
       timeout: 20m0s
     workflow: servicemesh-istio-e2e-profile
+  cron: 2 16 */3,14 * *
 - as: maistra-istio-unit-3-0
   steps:
     cluster_profile: aws-2

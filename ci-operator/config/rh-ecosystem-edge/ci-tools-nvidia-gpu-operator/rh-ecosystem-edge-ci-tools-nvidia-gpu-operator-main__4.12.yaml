@@ -11,7 +11,7 @@ releases:
     candidate:
       product: ocp
       stream: nightly
-      version: "4.12"
+      version: '4.12'
 resources:
   '*':
     limits:
@@ -21,7 +21,6 @@ resources:
       memory: 2Gi
 tests:
 - as: nvidia-gpu-operator-e2e-master
-  cron: 0 */23 * * *
   steps:
     cluster_profile: aws
     test:
@@ -48,8 +47,8 @@ tests:
           cpu: 2000m
           memory: 2Gi
     workflow: ipi-aws
+  cron: 18 19 */9,20 * *
 - as: nvidia-gpu-operator-e2e-22-9-x
-  cron: 0 */23 * * *
   steps:
     cluster_profile: aws
     test:
@@ -76,8 +75,8 @@ tests:
           cpu: 2000m
           memory: 2Gi
     workflow: ipi-aws
+  cron: 49 23 */8,20 * *
 - as: nvidia-gpu-operator-e2e-23-3-x
-  cron: 0 */23 * * *
   steps:
     cluster_profile: aws
     test:
@@ -93,7 +92,8 @@ tests:
           cpu: 2000m
           memory: 2Gi
     - as: nightly-gpu-operator-e2e
-      commands: make bundle_e2e_gpu_test GPU_BUNDLE=registry.gitlab.com/nvidia/kubernetes/gpu-operator/staging/gpu-operator-bundle:release-23.03-latest
+      commands: make bundle_e2e_gpu_test 
+        GPU_BUNDLE=registry.gitlab.com/nvidia/kubernetes/gpu-operator/staging/gpu-operator-bundle:release-23.03-latest
       credentials:
       - mount_path: /var/run/nvidia-ci-secrets
         name: nvidia-ci-secrets
@@ -104,8 +104,9 @@ tests:
           cpu: 2000m
           memory: 2Gi
     workflow: ipi-aws
+  cron: 2 2 */8,17 * *
 zz_generated_metadata:
   branch: main
   org: rh-ecosystem-edge
   repo: ci-tools-nvidia-gpu-operator
-  variant: "4.12"
+  variant: '4.12'
