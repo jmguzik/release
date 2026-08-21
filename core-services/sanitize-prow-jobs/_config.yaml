@@ -29550,4 +29550,6 @@ kvm:
 - build02
 - build04
 - build08
+manualClusters:
+- app.ci
 sshBastion: build02
